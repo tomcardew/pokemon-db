@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  pokemon-db
+//  digimon-zone
 //
 //  Created by Admin on 24/06/21.
 //
