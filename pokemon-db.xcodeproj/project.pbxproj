@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		799494ECC3992937D0C8BD7D /* Pods_pokemon_db.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF1EB40730B69B7D053274F /* Pods_pokemon_db.framework */; };
+		8400207F26862D78009BA66B /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400207E26862D78009BA66B /* MainPresenter.swift */; };
+		8400208226862E3B009BA66B /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400208126862E3B009BA66B /* NewsService.swift */; };
+		840020852686344E009BA66B /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840020842686344E009BA66B /* ErrorView.xib */; };
+		840020872686389E009BA66B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840020862686389E009BA66B /* ErrorView.swift */; };
+		8400208926863BCB009BA66B /* Extension+UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400208826863BCB009BA66B /* Extension+UIStackView.swift */; };
+		8400208C26863E94009BA66B /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400208B26863E94009BA66B /* NewsDetailsViewController.swift */; };
+		8400208E26863E9D009BA66B /* NewsDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8400208D26863E9D009BA66B /* NewsDetails.storyboard */; };
+		840020922686406A009BA66B /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840020912686406A009BA66B /* AppStoryboard.swift */; };
 		8470E9412684E11F00C039E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470E9402684E11F00C039E6 /* AppDelegate.swift */; };
 		8470E9432684E11F00C039E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470E9422684E11F00C039E6 /* SceneDelegate.swift */; };
 		8470E94A2684E12000C039E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8470E9492684E12000C039E6 /* Assets.xcassets */; };
@@ -29,6 +37,14 @@
 
 /* Begin PBXFileReference section */
 		03F690D499B2DC47D0C94FD0 /* Pods-pokemon-db.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemon-db.debug.xcconfig"; path = "Target Support Files/Pods-pokemon-db/Pods-pokemon-db.debug.xcconfig"; sourceTree = "<group>"; };
+		8400207E26862D78009BA66B /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		8400208126862E3B009BA66B /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		840020842686344E009BA66B /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		840020862686389E009BA66B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		8400208826863BCB009BA66B /* Extension+UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIStackView.swift"; sourceTree = "<group>"; };
+		8400208B26863E94009BA66B /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
+		8400208D26863E9D009BA66B /* NewsDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsDetails.storyboard; sourceTree = "<group>"; };
+		840020912686406A009BA66B /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		8470E93D2684E11F00C039E6 /* pokemon-db.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokemon-db.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8470E9402684E11F00C039E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8470E9422684E11F00C039E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +80,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8400208026862E2C009BA66B /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				8400208126862E3B009BA66B /* NewsService.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		8400208326863440009BA66B /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				840020842686344E009BA66B /* ErrorView.xib */,
+				840020862686389E009BA66B /* ErrorView.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		8400208A26863E7E009BA66B /* NewsDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8400208B26863E94009BA66B /* NewsDetailsViewController.swift */,
+				8400208D26863E9D009BA66B /* NewsDetails.storyboard */,
+			);
+			path = NewsDetails;
+			sourceTree = "<group>";
+		};
 		8470E9342684E11F00C039E6 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +127,7 @@
 		8470E93F2684E11F00C039E6 /* pokemon-db */ = {
 			isa = PBXGroup;
 			children = (
+				8400208026862E2C009BA66B /* DataSource */,
 				8470E9772684FD4B00C039E6 /* Models */,
 				8470E9702684EA4D00C039E6 /* Common */,
 				8470E96A2684E27400C039E6 /* Extensions */,
@@ -105,6 +148,7 @@
 				8470E97A2685235A00C039E6 /* News */,
 				8470E95B2684E20700C039E6 /* Main.storyboard */,
 				8470E95A2684E20700C039E6 /* MainViewController.swift */,
+				8400207E26862D78009BA66B /* MainPresenter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -112,6 +156,7 @@
 		8470E95F2684E21900C039E6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8400208A26863E7E009BA66B /* NewsDetails */,
 				8470E95E2684E21400C039E6 /* Main */,
 			);
 			path = Screens;
@@ -129,6 +174,7 @@
 		8470E9672684E25F00C039E6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8400208326863440009BA66B /* ErrorView */,
 				8470E9642684E25600C039E6 /* HomescreenButton */,
 			);
 			path = Components;
@@ -141,6 +187,7 @@
 				8470E97F2685278200C039E6 /* Extension+UIView.swift */,
 				8470E9812685296900C039E6 /* Extension+UIImageView.swift */,
 				8470E98326852F4800C039E6 /* Extension+Date.swift */,
+				8400208826863BCB009BA66B /* Extension+UIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -150,6 +197,7 @@
 			children = (
 				8470E9712684EA5C00C039E6 /* NetworkRequests.swift */,
 				8470E9752684FA1700C039E6 /* Constants.swift */,
+				840020912686406A009BA66B /* AppStoryboard.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -250,7 +298,9 @@
 				8470E94D2684E12000C039E6 /* LaunchScreen.storyboard in Resources */,
 				8470E97C2685236500C039E6 /* News.xib in Resources */,
 				8470E94A2684E12000C039E6 /* Assets.xcassets in Resources */,
+				840020852686344E009BA66B /* ErrorView.xib in Resources */,
 				8470E96F2684E7FE00C039E6 /* HomescreenButton.xib in Resources */,
+				8400208E26863E9D009BA66B /* NewsDetails.storyboard in Resources */,
 				8470E95D2684E20700C039E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,10 +360,16 @@
 				8470E95C2684E20700C039E6 /* MainViewController.swift in Sources */,
 				8470E9822685296900C039E6 /* Extension+UIImageView.swift in Sources */,
 				8470E97E2685246000C039E6 /* News.swift in Sources */,
+				8400208C26863E94009BA66B /* NewsDetailsViewController.swift in Sources */,
+				8400207F26862D78009BA66B /* MainPresenter.swift in Sources */,
 				8470E9722684EA5C00C039E6 /* NetworkRequests.swift in Sources */,
 				8470E96D2684E6CF00C039E6 /* Extension+UIColor.swift in Sources */,
+				840020922686406A009BA66B /* AppStoryboard.swift in Sources */,
 				8470E9762684FA1700C039E6 /* Constants.swift in Sources */,
+				840020872686389E009BA66B /* ErrorView.swift in Sources */,
+				8400208226862E3B009BA66B /* NewsService.swift in Sources */,
 				8470E98426852F4800C039E6 /* Extension+Date.swift in Sources */,
+				8400208926863BCB009BA66B /* Extension+UIStackView.swift in Sources */,
 				8470E9412684E11F00C039E6 /* AppDelegate.swift in Sources */,
 				8470E9432684E11F00C039E6 /* SceneDelegate.swift in Sources */,
 			);

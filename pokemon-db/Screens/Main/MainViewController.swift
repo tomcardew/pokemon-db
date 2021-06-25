@@ -14,14 +14,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak var newsStackView: UIStackView!
     @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
     
+    private let presenter = MainPresenter(service: NewsService.shared)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUi()
         
-        NetworkRequests.shared.getFeaturedNews(onSuccess: { result in
-            self.loadNews(list: result)
-        })
+        presenter.setViewDelegate(viewDelegate: self)
+        presenter.loadFeaturedNews()
     }
     
     private func setupUi() {
@@ -78,11 +79,19 @@ class MainViewController: UIViewController {
     }
     
     private func loadNews(list: NewsModel) {
-        for article in list.articles {
+        self.newsStackView.removeAllItems()
+        guard let articles = list.articles else {
+            loadingIndicator.stopAnimating()
+            return
+        }
+        for article in articles {
             let n = News()
             n.height(constant: 100)
             n.initializeView(data: article)
             n.alpha = 0
+            let touchEvent = ArticleGestureRecognizer(target: self, action: #selector(handleNewsTap(sender:)))
+            touchEvent.articleSelected = article
+            n.addGestureRecognizer(touchEvent)
             newsStackView.addArrangedSubview(n)
             UIView.animate(withDuration: 1, animations: {
                 n.alpha = 1
@@ -91,5 +100,46 @@ class MainViewController: UIViewController {
         loadingIndicator.stopAnimating()
         scrollViewHeight.constant = 2050
     }
+    
+    @objc func handleNewsTap(sender: ArticleGestureRecognizer) {
+        let storyboard = AppStoryboard.NewsDetails
+        let vc = NewsDetailsViewController.instantiate(fromAppStoryboard: storyboard)
+        vc.article = sender.articleSelected
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
+}
+
+extension MainViewController: MainDelegate {
+    
+    func loadedFeaturedNews(news: NewsModel) {
+        self.loadNews(list: news)
+    }
+    
+    func onError(errorMessage: String) {
+        print("ERROR: \(errorMessage)")
+        let errorView = ErrorView()
+        errorView.initializeView(message: errorMessage, isDark: false)
+        errorView.delegate = self
+        self.newsStackView.addArrangedSubview(errorView)
+        scrollViewHeight.constant = self.view.bounds.height
+    }
+    
+}
+
+extension MainViewController: ErrorViewDelegate {
+    
+    func onRetryPress() {
+        self.newsStackView.removeAllItems()
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+        self.presenter.loadFeaturedNews()
+    }
+    
+}
+
+class ArticleGestureRecognizer: UITapGestureRecognizer {
+    
+    var articleSelected: Article?
+    
 }

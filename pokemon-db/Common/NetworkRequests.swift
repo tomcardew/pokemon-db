@@ -12,10 +12,9 @@ class NetworkRequests {
     
     static let shared = NetworkRequests()
     
-    public func getFeaturedNews(onSuccess: @escaping(NewsModel) -> Void
-    ) {
+    public func getFeaturedNews(onSuccess: @escaping(NewsModel) -> Void) {
         let url = "\(ApiBaseUrls.News.rawValue)\(ApiPaths.News.rawValue)"
-        let parameters = ["q": "pokémon", "apiKey": ApiTokens.News.rawValue, "pageSize": "10", "sortBy": "publishedAt", "language": "en"]
+        let parameters = ["q": "pokémon", "apiKey": ApiTokens.News.rawValue, "pageSize": "10", "sortBy": "publishedAst", "language": "en"]
         AF.request(url, parameters: parameters).responseData(completionHandler: { response in
             switch response.result {
             case .success:
