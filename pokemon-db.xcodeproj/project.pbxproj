@@ -16,6 +16,8 @@
 		8400208C26863E94009BA66B /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400208B26863E94009BA66B /* NewsDetailsViewController.swift */; };
 		8400208E26863E9D009BA66B /* NewsDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8400208D26863E9D009BA66B /* NewsDetails.storyboard */; };
 		840020922686406A009BA66B /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840020912686406A009BA66B /* AppStoryboard.swift */; };
+		840020952686B14C009BA66B /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840020942686B14C009BA66B /* WebView.storyboard */; };
+		840020972686B1AC009BA66B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840020962686B1AC009BA66B /* WebViewController.swift */; };
 		8470E9412684E11F00C039E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470E9402684E11F00C039E6 /* AppDelegate.swift */; };
 		8470E9432684E11F00C039E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470E9422684E11F00C039E6 /* SceneDelegate.swift */; };
 		8470E94A2684E12000C039E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8470E9492684E12000C039E6 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		8400208B26863E94009BA66B /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		8400208D26863E9D009BA66B /* NewsDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsDetails.storyboard; sourceTree = "<group>"; };
 		840020912686406A009BA66B /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		840020942686B14C009BA66B /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		840020962686B1AC009BA66B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8470E93D2684E11F00C039E6 /* pokemon-db.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokemon-db.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8470E9402684E11F00C039E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8470E9422684E11F00C039E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 			path = NewsDetails;
 			sourceTree = "<group>";
 		};
+		840020932686B13F009BA66B /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				840020942686B14C009BA66B /* WebView.storyboard */,
+				840020962686B1AC009BA66B /* WebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		8470E9342684E11F00C039E6 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +169,7 @@
 		8470E95F2684E21900C039E6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				840020932686B13F009BA66B /* WebView */,
 				8400208A26863E7E009BA66B /* NewsDetails */,
 				8470E95E2684E21400C039E6 /* Main */,
 			);
@@ -297,6 +311,7 @@
 			files = (
 				8470E94D2684E12000C039E6 /* LaunchScreen.storyboard in Resources */,
 				8470E97C2685236500C039E6 /* News.xib in Resources */,
+				840020952686B14C009BA66B /* WebView.storyboard in Resources */,
 				8470E94A2684E12000C039E6 /* Assets.xcassets in Resources */,
 				840020852686344E009BA66B /* ErrorView.xib in Resources */,
 				8470E96F2684E7FE00C039E6 /* HomescreenButton.xib in Resources */,
@@ -354,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840020972686B1AC009BA66B /* WebViewController.swift in Sources */,
 				8470E9792684FD5400C039E6 /* NewsModel.swift in Sources */,
 				8470E96E2684E77500C039E6 /* HomescreenButton.swift in Sources */,
 				8470E9802685278200C039E6 /* Extension+UIView.swift in Sources */,

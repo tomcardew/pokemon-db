@@ -12,6 +12,8 @@ class NewsDetailsViewController: UIViewController {
     @IBOutlet weak var backButtonBlurView: UIVisualEffectView!
     @IBOutlet weak var backButtonContainerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var contentPaddingTop: NSLayoutConstraint!
     
@@ -20,8 +22,13 @@ class NewsDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backButtonBlurView.clipsToBounds = true
+        backButtonBlurView.layer.cornerRadius = 15
+        
         titleLabel.text = article!.title
         imageView.setImageFromUrl(url: article!.urlToImage ?? "")
+        dateLabel.text = Date().stringDate(utcDate: article!.publishedAt)
+        contentLabel.text = article!.content.components(separatedBy: "[")[0]
     }
     
     override func viewDidLayoutSubviews() {
@@ -32,6 +39,13 @@ class NewsDetailsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func openSiteButtonPressed(_ sender: Any) {
+        let storyboard = AppStoryboard.WebView
+        let vc = WebViewController.instantiate(fromAppStoryboard: storyboard)
+        vc.url = article!.url
+        vc.modalPresentationStyle = .formSheet
+        self.present(vc, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

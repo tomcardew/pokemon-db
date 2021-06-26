@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="WebViewController" customModule="pokemon_db" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MvB-Em-3Nd">
+                                <rect key="frame" x="0.0" y="50" width="414" height="758"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1G-59-tOR">
+                                <rect key="frame" x="20" y="10" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closePressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xIy-0S-IJW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wet-7c-fWe">
+                                <rect key="frame" x="281" y="10" width="113" height="30"/>
+                                <state key="normal" title="Open in browser"/>
+                                <connections>
+                                    <action selector="openBrowserPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WCB-Du-1Oi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="S1G-59-tOR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="D5X-HK-22h"/>
+                            <constraint firstItem="MvB-Em-3Nd" firstAttribute="top" secondItem="wet-7c-fWe" secondAttribute="bottom" constant="10" id="DAG-z0-hjT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wet-7c-fWe" secondAttribute="trailing" constant="20" id="H2b-1b-NeV"/>
+                            <constraint firstItem="MvB-Em-3Nd" firstAttribute="top" secondItem="S1G-59-tOR" secondAttribute="bottom" constant="10" id="Ky3-JO-ZYi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MvB-Em-3Nd" secondAttribute="trailing" id="Wv0-7p-lAs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MvB-Em-3Nd" secondAttribute="bottom" id="Xvy-4o-cBc"/>
+                            <constraint firstItem="S1G-59-tOR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="uQk-tg-4vJ"/>
+                            <constraint firstItem="MvB-Em-3Nd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vch-s1-QM3"/>
+                            <constraint firstItem="wet-7c-fWe" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="wpj-PL-ZOR"/>
+                        </constraints>
+                    </view>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="webView" destination="MvB-Em-3Nd" id="WpS-jB-iUT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
