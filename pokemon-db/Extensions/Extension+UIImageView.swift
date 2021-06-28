@@ -33,4 +33,14 @@ extension UIImageView {
         }
     }
     
+    public func getImageFromUrl(url: String) -> UIImage? {
+        let url = URL(string: url)
+        var image: UIImage? = nil
+        if let url = url {
+            let data = try? Data(contentsOf: url)
+            image = UIImage(data: data!)
+        }
+        return image
+    }
+    
 }

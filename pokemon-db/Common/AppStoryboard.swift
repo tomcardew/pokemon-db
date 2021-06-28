@@ -13,6 +13,8 @@ enum AppStoryboard: String {
     case Main
     case NewsDetails
     case WebView
+    case Pokedex
+    case PokemonDetails
 
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

@@ -10,12 +10,15 @@ import Foundation
 enum ApiBaseUrls: String {
     
     case News = "https://newsapi.org/v2"
+    case Pokeapi = "https://pokeapi.co/api/v2"
+    case PokemonImages = "https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/imagesHQ/"
     
 }
 
 enum ApiPaths: String {
     
     case News = "/everything"
+    case Pokemon = "/pokemon"
     
 }
 

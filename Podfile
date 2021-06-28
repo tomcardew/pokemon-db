@@ -7,4 +7,6 @@ target 'pokemon-db' do
 
   # Pods for pokemon-db
   pod 'Alamofire'
+  pod 'UIImageColors'
+  pod "MapleBacon"
 end

@@ -25,6 +25,10 @@ class MainViewController: UIViewController {
         presenter.loadFeaturedNews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+    
     private func setupUi() {
         setupNavigationButtons()
     }
@@ -51,6 +55,9 @@ class MainViewController: UIViewController {
         let btn1 = HomescreenButton()
         btn1.initializeButton(label: "Pokedex", color: UIColor.pokeGreen())
         btn1.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 55)
+        
+        let gesture1 = UITapGestureRecognizer(target: self, action: #selector(handleOpenPokedex))
+        btn1.addGestureRecognizer(gesture1)
         
         let btn2 = HomescreenButton()
         btn2.initializeButton(label: "Moves", color: UIColor.pokeRed())
@@ -105,6 +112,13 @@ class MainViewController: UIViewController {
         let storyboard = AppStoryboard.NewsDetails
         let vc = NewsDetailsViewController.instantiate(fromAppStoryboard: storyboard)
         vc.article = sender.articleSelected
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func handleOpenPokedex() {
+        let storyboard = AppStoryboard.Pokedex
+        let vc = PokedexViewController.instantiate(fromAppStoryboard: storyboard)
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
