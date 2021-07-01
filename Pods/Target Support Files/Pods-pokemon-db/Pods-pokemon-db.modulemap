@@ -1,0 +1,6 @@
+framework module Pods_pokemon_db {
+  umbrella header "Pods-pokemon-db-umbrella.h"
+
+  export *
+  module * { export * }
+}

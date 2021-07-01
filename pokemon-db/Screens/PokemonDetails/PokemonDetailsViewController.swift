@@ -100,7 +100,7 @@ class PokemonDetailsViewController: UIViewController {
     }
     
     private func configureAbilities(data: PokemonData, color: UIColor?) {
-        self.abilitiesView.configureView(data: data, color: color)
+        self.abilitiesView.configureView(data: data, color: color, vc: self)
     }
     
     private func configureStats(data: PokemonData, color: UIColor?) {

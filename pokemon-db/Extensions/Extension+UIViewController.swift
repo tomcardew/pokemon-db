@@ -37,4 +37,12 @@ extension UIViewController {
         })
     }
     
+    func isBeingPresentedInFormSheet() -> Bool {
+        if self.traitCollection.horizontalSizeClass == .regular {
+            return false
+        } else {
+            return true
+        }
+    }
+    
 }

@@ -284,3 +284,47 @@ struct PokemonEvolutionDetails: Codable {
     let minHappiness: Int?
     let trigger: DefaultItem
 }
+
+struct PokemonAbilityDetails: Codable {
+//    let effectChanges: [String]?
+    let effectEntries: [EffectEntry]
+    let flavorTextEntries: [PokemonFlavorExtended]
+    let generation: DefaultItem
+    let id: Int
+    let isMainSeries: Bool
+    let name: String
+    let pokemon: [PokemonAbilityItem]
+    
+    func getEffectEntryByLanguage(lang: Language) -> EffectEntry? {
+        for effect in self.effectEntries {
+            if effect.language.name == lang.rawValue {
+                return effect
+            }
+        }
+        return nil
+    }
+}
+
+struct EffectEntry: Codable {
+    let effect: String
+    let language: DefaultItem
+    let shortEffect: String
+}
+
+struct PokemonAbilityItem: Codable {
+    let isHidden: Bool
+    let pokemon: DefaultItem
+    let slot: Int
+}
+
+struct PokemonFlavorExtended: Codable {
+    let flavorText: String
+    let language: DefaultItem
+    let versionGroup: DefaultItem
+}
+
+enum Language: String {
+    case en
+    case de
+    case es
+}

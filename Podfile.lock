@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (5.4.3)
+  - MapleBacon (6.1.1)
+  - SwiftSVG (2.3.2)
+  - UIImageColors (2.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - MapleBacon
+  - SwiftSVG
+  - UIImageColors
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - MapleBacon
+    - SwiftSVG
+    - UIImageColors
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  MapleBacon: 05a421f5136fa2a75c6f94d0d617a9520534f220
+  SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
+  UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
+
+PODFILE CHECKSUM: 4748312f6a68b9f74435d22d86550d51da7f8203
+
+COCOAPODS: 1.10.1

@@ -76,5 +76,7 @@ class EvolutionChain: UIView {
 class PokemonGestureRecognizer: UITapGestureRecognizer {
     
     var pokemonSelected: PokemonListItem?
+    var pokemonData: PokemonData?
+    var abilitySelected: PokemonAbility?
     
 }
