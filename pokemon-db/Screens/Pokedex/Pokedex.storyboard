@@ -56,7 +56,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rx8-fr-BGK">
-                                <rect key="frame" x="0.0" y="114.5" width="414" height="781.5"/>
+                                <rect key="frame" x="0.0" y="114.5" width="414" height="747.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VuS-Ou-Ukh">
                                     <size key="itemSize" width="169" height="128"/>
@@ -86,6 +86,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Rx8-fr-BGK" secondAttribute="bottom" id="1eS-z1-5Ta"/>
                             <constraint firstItem="cCI-Wg-lr0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="8bj-4C-pDk"/>
                             <constraint firstItem="Rx8-fr-BGK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="EaE-gh-eyC"/>
                             <constraint firstItem="cCI-Wg-lr0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="TVJ-Vq-Gdh"/>
@@ -96,7 +97,6 @@
                             <constraint firstItem="Rx8-fr-BGK" firstAttribute="top" secondItem="a5O-pv-GvV" secondAttribute="bottom" constant="20" id="gn1-kQ-8aL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Rx8-fr-BGK" secondAttribute="trailing" id="vte-S8-W93"/>
                             <constraint firstItem="6MP-F6-FlF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="-115" id="wdX-5E-a0l"/>
-                            <constraint firstAttribute="bottom" secondItem="Rx8-fr-BGK" secondAttribute="bottom" id="x46-W2-CZ4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9oo-gP-uvX"/>

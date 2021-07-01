@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokemonItem" customModule="pokemon_db" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="ZLt-Jd-uhh"/>
+                <outlet property="idLabel" destination="phR-zD-lUh" id="52m-6F-Ycz"/>
+                <outlet property="imageView" destination="Zx3-wh-wZZ" id="EkA-tL-oSL"/>
+                <outlet property="levelLabel" destination="Qw3-FM-vqZ" id="16q-Me-vXu"/>
+                <outlet property="nameLabel" destination="cwl-Ln-Zpk" id="jUG-qb-Pj3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="176" height="411"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PokeballIcon" translatesAutoresizingMaskIntoConstraints="NO" id="KVj-q8-qG1">
+                    <rect key="frame" x="0.0" y="30" width="176" height="176"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KVj-q8-qG1" secondAttribute="height" id="u0u-hz-1Wk"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zx3-wh-wZZ">
+                    <rect key="frame" x="5" y="35" width="166" height="166"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Zx3-wh-wZZ" secondAttribute="height" id="5Od-c2-X1g"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="#001" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phR-zD-lUh">
+                    <rect key="frame" x="10" y="211" width="156" height="14.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bulbasaur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwl-Ln-Zpk">
+                    <rect key="frame" x="10" y="230.5" width="156" height="19.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qw3-FM-vqZ">
+                    <rect key="frame" x="10" y="5" width="156" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="Wgv-fM-Aj5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Qw3-FM-vqZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="1Mu-uc-lFy"/>
+                <constraint firstItem="phR-zD-lUh" firstAttribute="top" secondItem="Zx3-wh-wZZ" secondAttribute="bottom" constant="10" id="5p2-bw-OgA"/>
+                <constraint firstItem="KVj-q8-qG1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="60g-Ba-mFN"/>
+                <constraint firstItem="phR-zD-lUh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="78i-b1-pTA"/>
+                <constraint firstAttribute="trailing" secondItem="Zx3-wh-wZZ" secondAttribute="trailing" constant="5" id="GBe-8H-9sr"/>
+                <constraint firstAttribute="trailing" secondItem="Qw3-FM-vqZ" secondAttribute="trailing" constant="10" id="IY7-sY-U2n"/>
+                <constraint firstItem="Qw3-FM-vqZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="M1P-eN-c7d"/>
+                <constraint firstItem="Zx3-wh-wZZ" firstAttribute="top" secondItem="Qw3-FM-vqZ" secondAttribute="bottom" constant="15" id="SfQ-BJ-jpA"/>
+                <constraint firstItem="cwl-Ln-Zpk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Tbm-Pa-vhd"/>
+                <constraint firstItem="Zx3-wh-wZZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="YG2-3k-T8j"/>
+                <constraint firstItem="cwl-Ln-Zpk" firstAttribute="top" secondItem="phR-zD-lUh" secondAttribute="bottom" constant="5" id="a9o-Pf-D3E"/>
+                <constraint firstItem="KVj-q8-qG1" firstAttribute="top" secondItem="Qw3-FM-vqZ" secondAttribute="bottom" constant="10" id="gwh-dO-FM9"/>
+                <constraint firstAttribute="trailing" secondItem="phR-zD-lUh" secondAttribute="trailing" constant="10" id="mgl-0n-iUu"/>
+                <constraint firstAttribute="bottom" secondItem="cwl-Ln-Zpk" secondAttribute="bottom" constant="10" id="pF9-Sc-j5z"/>
+                <constraint firstAttribute="trailing" secondItem="cwl-Ln-Zpk" secondAttribute="trailing" constant="10" id="wYF-Hm-5B8"/>
+                <constraint firstAttribute="trailing" secondItem="KVj-q8-qG1" secondAttribute="trailing" id="yFT-ln-2Dg"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-137.68115942028987" y="-45.870535714285715"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="PokeballIcon" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

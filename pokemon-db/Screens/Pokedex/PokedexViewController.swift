@@ -50,7 +50,6 @@ extension PokedexViewController: PokedexDelegate {
     }
     
     func listDidLoad(list: PokemonList) {
-        print(list)
         collectionView.reloadData()
     }
     
@@ -80,7 +79,7 @@ extension PokedexViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = AppStoryboard.PokemonDetails
         let vc = PokemonDetailsViewController.instantiate(fromAppStoryboard: storyboard)
-        vc.data = PokemonData(id: 1, name: "Bulbasaur", isDefault: true, height: 12, order: 1, weight: 120, sprites: PokemonSprites(backDefault: "", frontDefault: ""))
+        vc.data = PokemonService.shared.previousResults!.results![indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

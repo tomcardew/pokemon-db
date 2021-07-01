@@ -33,7 +33,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNz-Ou-jPn">
                         <rect key="frame" x="10" y="10" width="13.5" height="14.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PokeballIcon" translatesAutoresizingMaskIntoConstraints="NO" id="JoV-FU-vMf">
@@ -42,6 +42,30 @@
                             <constraint firstAttribute="width" secondItem="JoV-FU-vMf" secondAttribute="height" id="6F2-LN-cLf"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cte-LC-WjK" customClass="PaddingLabel" customModule="pokemon_db" customModuleProvider="target">
+                        <rect key="frame" x="10" y="57.5" width="28" height="16"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="vHz-M5-B5L"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -55,6 +79,8 @@
                 <constraint firstAttribute="bottom" secondItem="uVl-J0-iVk" secondAttribute="bottom" constant="10" id="dxu-hl-JQn"/>
                 <constraint firstAttribute="bottom" secondItem="JoV-FU-vMf" secondAttribute="bottom" constant="10" id="ey8-w7-3JN"/>
                 <constraint firstItem="uVl-J0-iVk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="f7N-Wy-Bw2"/>
+                <constraint firstItem="uVl-J0-iVk" firstAttribute="top" secondItem="Cte-LC-WjK" secondAttribute="bottom" constant="10" id="ipd-Zh-8V0"/>
+                <constraint firstItem="Cte-LC-WjK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="phR-19-WzK"/>
                 <constraint firstAttribute="trailing" secondItem="Qxj-e2-hyw" secondAttribute="trailing" constant="5" id="yrb-ia-HHT"/>
                 <constraint firstItem="Qxj-e2-hyw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="zuE-os-uHT"/>
             </constraints>
@@ -63,6 +89,7 @@
                 <outlet property="nameLabel" destination="uVl-J0-iVk" id="ZP9-4R-kLa"/>
                 <outlet property="numberLabel" destination="yNz-Ou-jPn" id="iLi-sl-g8q"/>
                 <outlet property="pokemonImage" destination="Qxj-e2-hyw" id="24O-lo-kiy"/>
+                <outlet property="typeLabel" destination="Cte-LC-WjK" id="yPp-po-Nr3"/>
             </connections>
             <point key="canvasLocation" x="488.40579710144931" y="79.352678571428569"/>
         </collectionViewCell>

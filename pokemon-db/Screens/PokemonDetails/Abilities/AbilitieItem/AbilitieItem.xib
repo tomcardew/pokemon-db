@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AbilitieItem" customModule="pokemon_db" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="VND-ZZ-T25"/>
+                <outlet property="isHiddenIndicator" destination="PR8-Cg-c8e" id="Jar-AY-aII"/>
+                <outlet property="nameLabel" destination="af7-W3-E5r" id="Zsm-Jk-pLV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="951" height="505"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-oI-tR4">
+                    <rect key="frame" x="0.0" y="0.0" width="951" height="505"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hSF-TS-eEz">
+                        <rect key="frame" x="0.0" y="0.0" width="951" height="505"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af7-W3-E5r">
+                                <rect key="frame" x="455" y="243" width="41" height="19.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIr-qI-lzV">
+                                <rect key="frame" x="562.5" y="63" width="378.5" height="379"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZmI-4G-Cop">
+                                    <rect key="frame" x="0.0" y="0.0" width="378" height="379"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FJY-3b-90K">
+                                            <rect key="frame" x="0.0" y="0.5" width="378.5" height="378"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="FJY-3b-90K" secondAttribute="bottom" id="bZk-QC-0Yb"/>
+                                        <constraint firstAttribute="trailing" secondItem="FJY-3b-90K" secondAttribute="trailing" id="c5g-Bd-pLy"/>
+                                        <constraint firstItem="FJY-3b-90K" firstAttribute="top" secondItem="ZmI-4G-Cop" secondAttribute="top" id="eRg-dz-Huq"/>
+                                        <constraint firstItem="FJY-3b-90K" firstAttribute="leading" secondItem="ZmI-4G-Cop" secondAttribute="leading" id="eoJ-Wn-A1m"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wIr-qI-lzV" secondAttribute="height" id="1aZ-ET-WQS"/>
+                                </constraints>
+                                <vibrancyEffect style="separator">
+                                    <blurEffect style="regular"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PR8-Cg-c8e">
+                                <rect key="frame" x="172.5" y="62.5" width="380" height="380"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3GD-qv-sa4">
+                                    <rect key="frame" x="0.0" y="0.0" width="380" height="380"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye.slash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9Ix-SK-NuT">
+                                            <rect key="frame" x="0.0" y="1" width="380" height="377.5"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9Ix-SK-NuT" firstAttribute="top" secondItem="3GD-qv-sa4" secondAttribute="top" id="IGr-wx-MbU"/>
+                                        <constraint firstAttribute="bottom" secondItem="9Ix-SK-NuT" secondAttribute="bottom" id="aki-tQ-5KY"/>
+                                        <constraint firstAttribute="trailing" secondItem="9Ix-SK-NuT" secondAttribute="trailing" id="dzJ-it-gSI"/>
+                                        <constraint firstItem="9Ix-SK-NuT" firstAttribute="leading" secondItem="3GD-qv-sa4" secondAttribute="leading" id="lqv-eU-GAZ"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PR8-Cg-c8e" secondAttribute="height" id="Gg4-cv-4jt"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="regular"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wIr-qI-lzV" secondAttribute="trailing" constant="10" id="0P7-4b-D3N"/>
+                            <constraint firstItem="af7-W3-E5r" firstAttribute="centerY" secondItem="hSF-TS-eEz" secondAttribute="centerY" id="23e-cY-Ftj"/>
+                            <constraint firstItem="wIr-qI-lzV" firstAttribute="centerY" secondItem="hSF-TS-eEz" secondAttribute="centerY" id="7xh-R7-c5c"/>
+                            <constraint firstItem="wIr-qI-lzV" firstAttribute="height" secondItem="hSF-TS-eEz" secondAttribute="height" multiplier="0.75" id="KXr-fm-xZI"/>
+                            <constraint firstItem="af7-W3-E5r" firstAttribute="centerX" secondItem="hSF-TS-eEz" secondAttribute="centerX" id="NNb-Cc-M8f"/>
+                            <constraint firstItem="wIr-qI-lzV" firstAttribute="leading" secondItem="PR8-Cg-c8e" secondAttribute="trailing" constant="10" id="Ojn-2P-pwj"/>
+                            <constraint firstItem="PR8-Cg-c8e" firstAttribute="height" secondItem="hSF-TS-eEz" secondAttribute="height" multiplier="0.750495" constant="0.75" id="bJm-Ue-sYP"/>
+                            <constraint firstItem="PR8-Cg-c8e" firstAttribute="centerY" secondItem="hSF-TS-eEz" secondAttribute="centerY" id="yBb-zZ-tlL"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="systemMaterialLight"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ggT-oI-tR4" secondAttribute="bottom" id="2HA-6T-jKx"/>
+                <constraint firstItem="ggT-oI-tR4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JtC-HH-O43"/>
+                <constraint firstAttribute="trailing" secondItem="ggT-oI-tR4" secondAttribute="trailing" id="p00-gy-2TJ"/>
+                <constraint firstItem="ggT-oI-tR4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xj4-qG-rt7"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-458.69565217391306" y="193.19196428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="eye.slash" catalog="system" width="128" height="86"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
