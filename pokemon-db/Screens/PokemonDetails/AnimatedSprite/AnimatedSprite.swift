@@ -1,16 +1,16 @@
 //
-//  self.swift
+//  AnimatedSprite.swift
 //  pokemon-db
 //
-//  Created by Admin on 30/06/21.
+//  Created by Admin on 03/07/21.
 //
 
 import UIKit
 
-class LoadingView: UIView {
+class AnimatedSprite: UIView {
 
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var loadingLabel: UILabel!
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
     required init?(coder: NSCoder) {
@@ -24,15 +24,17 @@ class LoadingView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("LoadingView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("AnimatedSprite", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        mainView.layer.cornerRadius = 10
+        mainView.clipsToBounds = true
     }
     
-    public func configure(message: String = "", parentView: UIView? = nil) {
-        self.loadingLabel.text = message
-        self.imageView.rotate(duration: CFTimeInterval(5))
+    public func configureView(urlToResource: String, color: UIColor?) {
+        self.imageView.image = UIImage.gifImageWithURL(urlToResource)
+        self.mainView.backgroundColor = color
     }
 
 }

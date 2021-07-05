@@ -73,6 +73,16 @@ struct PokemonData: Codable {
         return url
     }
     
+    /**
+     Returns the URL string to get the animated gif of the present Pokemon
+     - Returns: The URL String of the resource
+     */
+    func getAnimatedGif() -> String {
+        let name = self.name
+        let url = "https://www.pkparaiso.com/imagenes/xy/sprites/animados/\(name).gif"
+        return url
+    }
+    
     func getWeightKilograms() -> Float {
         return Float(self.weight / 10)
     }
@@ -299,6 +309,15 @@ struct PokemonAbilityDetails: Codable {
         for effect in self.effectEntries {
             if effect.language.name == lang.rawValue {
                 return effect
+            }
+        }
+        return nil
+    }
+    
+    func getEffectFlavorByLanguage(lang: Language) -> PokemonFlavorExtended? {
+        for flavor in self.flavorTextEntries {
+            if flavor.language.name == lang.rawValue {
+                return flavor
             }
         }
         return nil

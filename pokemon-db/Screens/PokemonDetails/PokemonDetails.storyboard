@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bm8-bo-k5k">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1274"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1474"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXs-46-EhN">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
@@ -87,7 +87,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="PuT-yp-Ry1">
-                                                <rect key="frame" x="0.0" y="276" width="414" height="978"/>
+                                                <rect key="frame" x="0.0" y="276" width="414" height="1178"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpe-y4-6kd" customClass="SpeciesView" customModule="pokemon_db" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="226"/>
@@ -101,8 +101,15 @@
                                                         <rect key="frame" x="0.0" y="452" width="414" height="226"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGl-Ww-e4g" customClass="AnimatedSprite" customModule="pokemon_db" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="678" width="414" height="200"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="dnk-4T-dSJ"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgB-5g-r9N" customClass="EvolutionChain" customModule="pokemon_db" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="678" width="414" height="300"/>
+                                                        <rect key="frame" x="0.0" y="878" width="414" height="300"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                 </subviews>
@@ -176,6 +183,7 @@
                     <navigationItem key="navigationItem" id="KKC-eq-Ol2"/>
                     <connections>
                         <outlet property="abilitiesView" destination="wCQ-Ni-9Co" id="l51-ha-0UV"/>
+                        <outlet property="animatedSpriteView" destination="GGl-Ww-e4g" id="Uqr-B2-juK"/>
                         <outlet property="backBtn" destination="7yy-df-HTQ" id="enI-X6-lz2"/>
                         <outlet property="backBtnContainerView" destination="zWo-nh-B8M" id="8lq-uA-IYa"/>
                         <outlet property="contentView" destination="Bm8-bo-k5k" id="PuZ-ge-QXC"/>

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView {
     
-    public func setImageFromUrl(url: String) {
+    public func setImageFromUrl(url: String, _ completion: ((UIImage?) -> Void)? = nil) {
         let url = URL(string: url)
         if let url = url {
             DispatchQueue.global().async {
@@ -22,10 +22,14 @@ extension UIImageView {
                         if let data = data {
                             self.image = UIImage(data: data)
                         } else {
-                            self.image = UIImage(named: "NoImageFound")
+                            self.image = UIImage(named: "PokeballIcon")
+                            self.alpha = 0.25
                         }
                         UIView.animate(withDuration: 1, animations: {
                             self.alpha = 1
+                            if let completion = completion {
+                                completion(self.image)
+                            }
                         })
                     })
                 }

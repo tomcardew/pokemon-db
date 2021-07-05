@@ -28,6 +28,7 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var abilitiesView: AbilitiesView!
     @IBOutlet weak var statsView: StatsView!
     @IBOutlet weak var evolutionView: EvolutionChain!
+    @IBOutlet weak var animatedSpriteView: AnimatedSprite!
     
     var data: PokemonListItem?
     var pokemon: PokemonData?
@@ -38,7 +39,6 @@ class PokemonDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.setViewDelegate(delegate: self)
-        
         self.presenter.loadAllData(pokemon: data!)
     }
     
@@ -87,6 +87,7 @@ class PokemonDetailsViewController: UIViewController {
         configureTypes(types: data.types)
         configureAbilities(data: data, color: color)
         configureStats(data: data, color: color)
+        configureAnimatedSprite(data: data, color: color)
     }
     
     private func configureTypes(types: [PokemonTypes]) {
@@ -107,6 +108,10 @@ class PokemonDetailsViewController: UIViewController {
         self.statsView.configureView(stats: data.stats!, color: color)
     }
     
+    private func configureAnimatedSprite(data: PokemonData, color: UIColor?) {
+        self.animatedSpriteView.configureView(urlToResource: data.getAnimatedGif(), color: color)
+    }
+    
     @IBAction func backBtnPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -120,16 +125,18 @@ extension PokemonDetailsViewController: PokemonDetailsDelegate {
     }
     
     func didLoadingStarted() {
-        self.showLoadingView()
+        self.showLoadingView(message: "Getting information", parent: nil, completion: nil)
     }
     
     func didLoadedData(data: PokemonData, color: UIColor?, image: UIImage?) {
         self.configureView(data: data, color: color, image: image)
         self.hideLoadingView()
+        self.showAlert(message: "The information has been gathered completely!")
     }
     
     func didReceiveError(error: String) {
         self.hideLoadingView()
+        self.showAlert(message: error, isError: true)
     }
     
     func didLoadedEvolutionData(data: PokemonEvolutionChain) {

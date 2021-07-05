@@ -60,6 +60,7 @@ class AbilitiesView: UIView {
         vc.modalPresentationStyle = .formSheet
         vc.pokemon = gesture.pokemonData
         vc.ability = gesture.abilitySelected
+        vc.navigation = self.viewController?.navigationController
         self.viewController?.present(vc, animated: true, completion: nil)
     }
 

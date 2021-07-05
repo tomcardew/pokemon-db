@@ -12,11 +12,11 @@ class PokemonService {
     
     static let shared = PokemonService()
     var previousResults: PokemonList? = nil
-    var onPage = 1
+    var onPage = 0
     var next: String?
     var previous: String?
     
-    public func getList(page: Int = 1, onSuccess: @escaping(PokemonList) -> Void, onError: @escaping(String) -> Void) {
+    public func getList(page: Int = 0, onSuccess: @escaping(PokemonList) -> Void, onError: @escaping(String) -> Void) {
         let url = "\(ApiBaseUrls.Pokeapi.rawValue)\(ApiPaths.Pokemon.rawValue)"
         let params = ["limit": "50", "offset": "\(50 * page)"]
         AF.request(url, parameters: params).responseData(completionHandler: { response in
@@ -87,7 +87,6 @@ class PokemonService {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let result = try decoder.decode(PokemonEvolutionChain.self, from: response.data!)
-                    debugPrint(result)
                     onSuccess(result)
                 } catch {
                     debugPrint(error)
@@ -107,7 +106,6 @@ class PokemonService {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let result = try decoder.decode(PokemonAbilityDetails.self, from: response.data!)
-                    debugPrint(result)
                     onSuccess(result)
                 } catch {
                     debugPrint(error)

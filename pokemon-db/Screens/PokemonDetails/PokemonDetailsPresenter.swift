@@ -38,22 +38,25 @@ class PokemonDetailsPresenter {
                 self.pokemonDetailsDelegate?.didReceiveError(error: error ?? "Something went wrong")
                 return
             }
-            UIImageView().setImage(with: URL(string: data.getImage()), completion: { image in
-                image?.getColors(quality: .lowest, { colors in
-                    self.pokemonDetailsDelegate?.didLoadedData(data: data, color: colors?.background, image: image)
-                    self.loadPokemonSpeciesInfo(url: data.species.url, completion: { (info, error) in
-                        guard let specie = info else {
-                            self.pokemonDetailsDelegate?.didReceiveError(error: error ?? "Something went wrong")
-                            return
-                        }
-                        self.service.getPokemonEvolutions(url: specie.evolutionChain.url, onSuccess: { data in
-                            self.pokemonDetailsDelegate?.didLoadedEvolutionData(data: data)
-                        }, onError: { error in
-                            self.pokemonDetailsDelegate?.didReceiveError(error: error)
+            let imageView = UIImageView()
+            imageView.setImageFromUrl(url: data.getImage(), { image in
+                if let image = image {
+                    image.getColors(quality: .lowest, { colors in
+                        self.pokemonDetailsDelegate?.didLoadedData(data: data, color: colors?.background, image: image)
+                        self.loadPokemonSpeciesInfo(url: data.species.url, completion: { (info, error) in
+                            guard let specie = info else {
+                                self.pokemonDetailsDelegate?.didReceiveError(error: error ?? "Something went wrong")
+                                return
+                            }
+                            self.service.getPokemonEvolutions(url: specie.evolutionChain.url, onSuccess: { data in
+                                self.pokemonDetailsDelegate?.didLoadedEvolutionData(data: data)
+                            }, onError: { error in
+                                self.pokemonDetailsDelegate?.didReceiveError(error: error)
+                            })
+                            self.pokemonDetailsDelegate?.didLoadedSpeciesData(data: data, specie: specie, color: colors?.background)
                         })
-                        self.pokemonDetailsDelegate?.didLoadedSpeciesData(data: data, specie: specie, color: colors?.background)
                     })
-                })
+                }
             })
         })
     }
