@@ -15,6 +15,7 @@ class PokemonItem: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     
+    var viewModel: PokemonItemViewModel!
     private let presenter = PokemonItemPresenter(service: PokemonService.shared)
     
     required init?(coder: NSCoder) {
@@ -31,8 +32,6 @@ class PokemonItem: UIView {
         Bundle.main.loadNibNamed("PokemonItem", owner: self, options: nil)
         addSubview(contentView)
         
-        presenter.setViewDelegate(delegate: self)
-        
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
@@ -40,44 +39,28 @@ class PokemonItem: UIView {
     public func configureView(url: String, level: String = "") {
         self.contentView.layer.cornerRadius = 10
         self.contentView.clipsToBounds = true
-        
-        self.levelLabel.text = level
-        
-        self.presenter.loadData(url: url)
-    }
-    
-    private func updateColors(isLight: Bool?) {
-        if let isLight = isLight, isLight {
-            self.levelLabel.textColor = .black
-            self.idLabel.textColor = .black
-            self.nameLabel.textColor = .black
-        } else {
-            self.levelLabel.textColor = .white
-            self.idLabel.textColor = .white
-            self.nameLabel.textColor = .white
+
+        self.viewModel = PokemonItemViewModel(service: PokemonService.shared, from: url)
+        viewModel.updateView = { [weak self] in
+            let pokemon = self?.viewModel.pokemon
+            self?.idLabel.text = "#" + pokemon!.getId()
+            self?.nameLabel.text = pokemon?.name.capitalized
+            self?.levelLabel.text = level
         }
+        viewModel.updateColors = { [weak self] in
+            self?.updateColors(color: self?.viewModel.colors.textColor ?? .black)
+            self?.contentView.backgroundColor = self?.viewModel.colors.bgColor
+        }
+        viewModel.updateImageView = { [weak self] in
+            self?.imageView.image = self?.viewModel.currentImage
+        }
+        viewModel.initFetch()
+    }
+    
+    private func updateColors(color: UIColor) {
+        self.levelLabel.textColor = color
+        self.idLabel.textColor = color
+        self.nameLabel.textColor = color
     }
 
-}
-
-extension PokemonItem: PokemonItemDelegate {
-    
-    func didLoadedData(data: PokemonData) {
-        self.nameLabel.text = data.name.capitalized
-        self.idLabel.text = "#" + data.getId()
-        
-        self.imageView.setImage(with: URL(string: data.getImage()), placeholder: nil, displayOptions: [], imageTransformer: nil, completion: { image in
-            image?.getColors(quality: .lowest, { colors in
-                self.contentView.backgroundColor = colors?.background
-                self.updateColors(isLight: colors?.background.isLight())
-            })
-        })
-        
-    }
-    
-    func didGetError(error: String) {
-        print(error)
-    }
-    
-    
 }

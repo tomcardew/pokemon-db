@@ -18,7 +18,7 @@ class PokemonService {
     var previous: String?
     var filteredResults: PokemonList? = nil
     
-    public func getList(page: Int = 0, onSuccess: @escaping(PokemonList) -> Void, onError: @escaping(String) -> Void) {
+    public func getList(page: Int = 0, completion: @escaping(Result<PokemonList, Error>) -> Void) {
         let url = "\(ApiBaseUrls.Pokeapi.rawValue)\(ApiPaths.Pokemon.rawValue)"
         let params = ["limit": "50", "offset": "\(50 * page)"]
         AF.request(url, parameters: params).responseData(completionHandler: { response in
@@ -33,12 +33,32 @@ class PokemonService {
                     self.onPage = page
                     self.next = result.next
                     self.previous = result.previous
-                    onSuccess(result)
+                    completion(.success(result))
                 } catch {
-                    onError(error.localizedDescription)
+                    completion(.failure(error))
                 }
             case .failure:
-                onError(response.error?.errorDescription ?? "Something went wrong")
+                completion(.failure(response.error!.underlyingError!))
+            }
+        })
+    }
+    
+    public func getAbilitiesList(page: Int = 0, completion: @escaping(Result<AbilityList, Error>) -> Void) {
+        let url = "\(ApiBaseUrls.Pokeapi.rawValue)\(ApiPaths.Abilities.rawValue)"
+        let params = ["limit": "50", "offset": "\(50 * page)"]
+        AF.request(url, parameters: params).responseData(completionHandler: { response in
+            switch response.result {
+            case .success:
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let result = try decoder.decode(AbilityList.self, from: response.data!)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            case .failure:
+                completion(.failure(response.error!.underlyingError!))
             }
         })
     }
@@ -58,6 +78,24 @@ class PokemonService {
                 }
             case .failure:
                 onError(response.error?.errorDescription ?? "Something went wrong")
+            }
+        })
+    }
+    
+    public func getPokemonDataC(url: String, completion: @escaping(Result<PokemonData, Error>) -> Void) {
+        AF.request(url).responseData(completionHandler: { response in
+            switch response.result {
+            case .success:
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let result = try decoder.decode(PokemonData.self, from: response.data!)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            case .failure:
+                completion(.failure(response.error!.underlyingError!))
             }
         })
     }

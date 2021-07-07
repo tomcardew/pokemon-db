@@ -26,10 +26,13 @@ class PokedexPresenter {
     }
     
     func loadList() {
-        pokemonService.getList(onSuccess: { results in
-            self.pokedexDelegate?.listDidLoad(list: results)
-        }, onError: { error in
-            self.pokedexDelegate?.didReceiveError(error: error)
+        pokemonService.getList(completion: { results in
+            switch results {
+            case .success(let data):
+                self.pokedexDelegate?.listDidLoad(list: data)
+            case .failure(let error):
+                self.pokedexDelegate?.didReceiveError(error: error.localizedDescription)
+            }
         })
     }
     

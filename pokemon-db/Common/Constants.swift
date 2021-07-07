@@ -19,6 +19,7 @@ enum ApiPaths: String {
     
     case News = "/everything"
     case Pokemon = "/pokemon"
+    case Abilities = "/ability"
     
 }
 

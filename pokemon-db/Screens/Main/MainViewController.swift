@@ -67,6 +67,9 @@ class MainViewController: UIViewController {
         btn3.initializeButton(label: "Abilities", color: UIColor.pokeYellow())
         btn3.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 55)
         
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(handleOpenAbilitiesList))
+        btn3.addGestureRecognizer(gesture2)
+        
         let btn4 = HomescreenButton()
         btn4.initializeButton(label: "Games", color: UIColor.pokeBlue())
         btn4.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 55)
@@ -120,6 +123,12 @@ class MainViewController: UIViewController {
     @objc func handleOpenPokedex() {
         let storyboard = AppStoryboard.Pokedex
         let vc = PokedexViewController.instantiate(fromAppStoryboard: storyboard)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func handleOpenAbilitiesList() {
+        let storyboard = AppStoryboard.AllAbilities
+        let vc = AllAbilitiesViewController.instantiate(fromAppStoryboard: storyboard)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

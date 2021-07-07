@@ -342,6 +342,13 @@ struct PokemonFlavorExtended: Codable {
     let versionGroup: DefaultItem
 }
 
+struct AbilityList: Codable {
+    let count: Int
+    let next: String?
+    let previous: String?
+    let results: [DefaultItem]?
+}
+
 enum Language: String {
     case en
     case de

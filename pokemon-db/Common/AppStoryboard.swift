@@ -16,6 +16,7 @@ enum AppStoryboard: String {
     case Pokedex
     case PokemonDetails
     case Abilities
+    case AllAbilities
 
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
