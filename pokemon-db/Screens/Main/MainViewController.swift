@@ -112,13 +112,14 @@ class MainViewController: UIViewController {
         let storyboard = AppStoryboard.NewsDetails
         let vc = NewsDetailsViewController.instantiate(fromAppStoryboard: storyboard)
         vc.article = sender.articleSelected
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .pageSheet
+        self.present(vc, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func handleOpenPokedex() {
         let storyboard = AppStoryboard.Pokedex
         let vc = PokedexViewController.instantiate(fromAppStoryboard: storyboard)
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

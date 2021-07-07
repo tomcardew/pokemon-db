@@ -11,6 +11,7 @@ import SwiftSVG
 class PokemonDetailsViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var mainColoredViewAspectRatio: NSLayoutConstraint!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var backBtnContainerView: UIVisualEffectView!
@@ -51,6 +52,9 @@ class PokemonDetailsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         marginTopConstraint.constant = self.view.safeAreaInsets.top * -1
+        if UIScreen.main.traitCollection.userInterfaceIdiom == .pad {
+            self.mainColoredViewAspectRatio.constant = 400
+        }
     }
     
     public func configureView(data: PokemonData, color: UIColor?, image: UIImage?) {
@@ -131,7 +135,6 @@ extension PokemonDetailsViewController: PokemonDetailsDelegate {
     func didLoadedData(data: PokemonData, color: UIColor?, image: UIImage?) {
         self.configureView(data: data, color: color, image: image)
         self.hideLoadingView()
-        self.showAlert(message: "The information has been gathered completely!")
     }
     
     func didReceiveError(error: String) {

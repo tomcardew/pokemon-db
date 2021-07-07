@@ -38,6 +38,11 @@ extension UIViewController {
         })
     }
     
+    public func updateLoadingViewMessage(message: String) {
+        let loadingView = UIViewController.loadingView
+        loadingView.configure(message: message, parentView: nil)
+    }
+    
     func isBeingPresentedInFormSheet() -> Bool {
         if self.traitCollection.horizontalSizeClass == .regular {
             return false

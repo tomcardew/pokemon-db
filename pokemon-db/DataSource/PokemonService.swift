@@ -11,10 +11,12 @@ import Alamofire
 class PokemonService {
     
     static let shared = PokemonService()
+    
     var previousResults: PokemonList? = nil
     var onPage = 0
     var next: String?
     var previous: String?
+    var filteredResults: PokemonList? = nil
     
     public func getList(page: Int = 0, onSuccess: @escaping(PokemonList) -> Void, onError: @escaping(String) -> Void) {
         let url = "\(ApiBaseUrls.Pokeapi.rawValue)\(ApiPaths.Pokemon.rawValue)"
@@ -22,12 +24,12 @@ class PokemonService {
         AF.request(url, parameters: params).responseData(completionHandler: { response in
             switch response.result {
             case .success:
-                print(true)
                 do {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let result = try decoder.decode(PokemonList.self, from: response.data!)
                     self.previousResults = result
+                    self.filteredResults = result
                     self.onPage = page
                     self.next = result.next
                     self.previous = result.previous

@@ -191,6 +191,7 @@
                         <outlet property="idLabel" destination="0OA-zZ-t9Z" id="Xmm-VS-CkV"/>
                         <outlet property="imageView" destination="uzm-LI-x7U" id="89o-G4-pxg"/>
                         <outlet property="mainColoredView" destination="SXs-46-EhN" id="2dO-JT-uwj"/>
+                        <outlet property="mainColoredViewAspectRatio" destination="ltQ-Hh-0bW" id="9J9-7c-Lm6"/>
                         <outlet property="marginTopConstraint" destination="wXt-8f-Egq" id="SWH-0b-wN8"/>
                         <outlet property="nameLabel" destination="Vfo-HB-wjo" id="N9j-fg-nOD"/>
                         <outlet property="speciesView" destination="mpe-y4-6kd" id="fpA-UL-4yg"/>
